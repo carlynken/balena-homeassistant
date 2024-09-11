@@ -34,7 +34,7 @@ services:
       # - 7000:7000
       - 8080:8080
     devices: 
-      - /dev/ttyACM0:/dev/ttyUSB0
+      - /dev/ttyUSB0:/dev/ttyUSB0
     privileged: true
 
   # hass-configurator:
