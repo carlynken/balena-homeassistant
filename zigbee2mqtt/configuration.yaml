@@ -1,7 +1,7 @@
 permit_join: true
 mqtt:
   base_topic: zigbee2mqtt
-  server: mqtt://mqtt
+  server: mqtt://mqtt:1883
 serial:
   port: /dev/ttyUSB0
 frontend:

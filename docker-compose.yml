@@ -31,8 +31,8 @@ services:
     volumes:
       - zigbee2mqtt:/app/data
     ports:
-      # - 7000:7000
-      - 8080:8080
+      - 7000:7000
+      # - 8080:8080
     devices: 
       - /dev/ttyUSB0:/dev/ttyACM0
     privileged: true
