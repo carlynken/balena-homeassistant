@@ -19,7 +19,6 @@ services:
     build: mqtt
     ports:
       - "1883:1883"
-    restart: always
     volumes:
       - mosquitto:/mosquitto/data
     tmpfs:
@@ -36,6 +35,33 @@ services:
     devices: 
       - /dev/ttyUSB0:/dev/ttyACM0
     privileged: true
+
+  code-server:
+    image: codercom/code-server:4.91.1@sha256:8403442d3472e411f72b6a5267b5ee0e62db27e258d81efebef40c3b41219970
+    command:
+      - --port=9000
+      - --auth=none
+      - --extensions-dir=/config/.vscode
+      - --user-data-dir=/config/.vscode
+      - /config
+    working_dir: /config
+    ports:
+      - 9000:9000/tcp
+    volumes:
+      - config:/config
+      - zigbee2mqtt:/config/zigbee2mqtt
+      # - esphome:/config/esphome
+      # - frigate-config:/config/frigate
+    user: root
+
+ # https://github.com/balenablocks/hostname
+  hostname:
+    build: hostname
+    restart: no
+    labels:
+      io.balena.features.supervisor-api: 1
+    environment:
+      SET_HOSTNAME: homeassistant
 
   # hass-configurator:
   #   image: "causticlab/hass-configurator-docker:latest"
