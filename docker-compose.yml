@@ -37,12 +37,12 @@ services:
       - /dev/ttyUSB0:/dev/ttyACM0
     privileged: true
 
-  hass-configurator:
-    image: "causticlab/hass-configurator-docker:latest"
-    restart: always
-    ports:
-      - "3218:3218"
-    volumes:
-      - 'config:/hass-config'
-    environment:
-      - HC_BASEPATH=/hass-config
+  # hass-configurator:
+  #   image: "causticlab/hass-configurator-docker:latest"
+  #   restart: always
+  #   ports:
+  #     - "3218:3218"
+  #   volumes:
+  #     - 'config:/hass-config'
+  #   environment:
+  #     - HC_BASEPATH=/hass-config
