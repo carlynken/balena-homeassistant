@@ -30,14 +30,14 @@ services:
     volumes:
       - zigbee2mqtt:/app/data
     ports:
-      - 7000:7000
-      # - 8080:8080
+      # - 7000:7000
+      - 8080:8080
     devices: 
       - /dev/ttyUSB0:/dev/ttyACM0
     privileged: true
 
   code-server:
-    image: codercom/code-server:4.91.1@sha256:8403442d3472e411f72b6a5267b5ee0e62db27e258d81efebef40c3b41219970
+    image: codercom/code-server:latest
     command:
       - --port=9000
       - --auth=none
@@ -63,6 +63,23 @@ services:
     environment:
       SET_HOSTNAME: homeassistant
 
+  # wifi-connect:
+  #   build: ./wifi-connect
+  #   network_mode: "host"
+  #   labels:
+  #     io.balena.features.dbus: '1'
+  #   cap_add:
+  #     - NET_ADMIN
+  #   environment:
+  #     DBUS_SYSTEM_BUS_ADDRESS: "unix:path=/host/run/dbus/system_bus_socket"
+  wifi-connect:
+    image: bh.cr/balenalabs/wifi-connect-rpi
+    restart: always
+    network_mode: host
+    privileged: true
+    labels:
+      io.balena.features.dbus: "1"
+      io.balena.features.firmware: "1"
   # hass-configurator:
   #   image: "causticlab/hass-configurator-docker:latest"
   #   restart: always
