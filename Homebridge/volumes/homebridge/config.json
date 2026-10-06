@@ -1,0 +1,48 @@
+{
+    "bridge": {
+        "name": "Homebridge BA2C",
+        "username": "0E:CE:41:61:A6:65",
+        "port": 51833,
+        "pin": "594-16-893",
+        "advertiser": "ciao",
+        "bind": [
+            "enp2s0f0",
+            "wlp3s0b1"
+        ]
+    },
+    "accessories": [],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8581,
+            "platform": "config"
+        },
+        {
+            "mqtt": {
+                "base_topic": "zigbee2mqtt",
+                "server": "mqtt://192.168.0.254:1883",
+                "reject_unauthorized": false,
+                "keepalive": 60,
+                "version": 4,
+                "disable_qos": false
+            },
+            "defaults": {
+                "exclude": false
+            },
+            "exclude_grouped_devices": false,
+            "platform": "zigbee2mqtt",
+            "_bridge": {
+                "username": "0E:85:25:C6:58:78",
+                "port": 55785
+            }
+        },
+        {
+            "refreshToken": "eyJydCI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW1wcmRTSTZJaTl2WVhWMGFDOXBiblJsY201aGJDOXFkMnR6SWl3aWEybGtJam9pWkRjMFlqTmhNV1VpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmxlSEFpT2pFM09UTTROVE01TXpRc0ltbGhkQ0k2TVRjNU1USTJNVGt6TkN3aWFYTnpJam9pVW1sdVowOWhkWFJvVTJWeWRtbGpaUzF3Y205a09uVnpMV1ZoYzNRdE1Ub3hMakF1TXpNNE55NHdJaXdpYjJsaGRDSTZNVGMzTURZME1UY3hOQ3dpY21WbWNtVnphRjlqYVdRaU9pSnlhVzVuWDI5bVptbGphV0ZzWDJGdVpISnZhV1FpTENKeVpXWnlaWE5vWDNOamIzQmxjeUk2V3lKamJHbGxiblFpWFN3aWNtVm1jbVZ6YUY5MWMyVnlYMmxrSWpveE1UQTRPRFExTlRnc0luSnVaQ0k2SWxWbVltRkJUVk5YV1hVaUxDSnpaWE56YVc5dVgybGtJam9pY21sdVp5MXpaWE56YVc5dUxUSmpPR1F3TUdKakxUWmlOVEV0TkdZNE9TMWhOelk0TFdOaE5XSXdaVGM1T1dReE1TSXNJbk56ZENJNk1Td2lkSGx3WlNJNkluSmxabkpsYzJndGRHOXJaVzRpZlEuTkh6SS1hOTc3b2dVUk9lNG55ckN3d2NYYjdINmJ1RHdhdGp1OXkxYjN5T3Nkd3VrN1haQi0xMHB4TFU5eXlYODUyODgxcE1VeUF1V2VxMmN6RUlpc29BbFZ2UThjUWM5MHdvWTRVclh3SW9nREJNN0JYRWRDbFU4eW1sWTJ5YU1taHZ1WUJib24yVzlUTFo5Z1hMaUxxS1J4VGlMQzVGZkV1b0NFenhORXNQNkZ6NnI0UU0yNUZ4ZnUwM19YNmRwczF2NHZINXVYZ2ZyUU9JblY3eEVyRlpMczNZNmRSMlFUMEtIRXpsaEF3Q3dHNktNUThUVEFWcGptTC1CdGdoTklrMDFYdDRERExPcUtnZDV4THdOMm5naVFfRDZtLTNkcDRRZFFET3BVU1daTmVqYWs1b1I2b0NITlY4ZTBsajRIS2c4M052eVU4SzEzWWh4dE9mcEd3IiwiaGlkIjoiNTUyNjU4MDQtMjliNC01ZjMzLWE3MTAtZWI4NGNhOGMzYTg2IiwicG5jIjp7ImtleXMiOnsicHJpdmF0ZUtleSI6Im9fMWNfd2FSM0xvZzZuSVRxR0xZQzFMWWVZaVVLTXF0cWxoMGJ5NFpFdUUiLCJwdWJsaWNLZXkiOiJCRGFEblRfdlNaSEwxWUtQYUdEb2UzbjVGS0pVcFNfb0dfbVRhcDFBVGZUUnhZdzRsWENHQjAwY1BuRGozYUFyMWZ3SjZ3OTJuTXEzVkliNVdUX1BWZUkiLCJhdXRoU2VjcmV0Ijoib1BvY1V1MEdqN1IxVE9XMm56Mm5xZyJ9LCJnY20iOnsidG9rZW4iOiJkeWc3c0l2WUVSczpBUEE5MWJIYTFWQjJrRzVnOHNlX0FFU2tPMnl0MWtlWEtFbWxxTjBsQldKYnVpc2hIeHpuemVVVktiVElDZFZ2MjdZU2FSS08xNFZ4VDl2cEJyX3N0MlVSY1FlTnR6TGlkN3B0T0NLMTdoZUVmekhwVW9FQlI2d3R2VHJCSllaWXlXbTYzTkpDZ29CMCIsImFuZHJvaWRJZCI6IjU2MTk1MTIxMzMxMjcwNjE4MjMiLCJzZWN1cml0eVRva2VuIjoiNzUwNjk3MDgyNjk5NjQwNzQ4IiwiYXBwSWQiOiJ3cDpyZWNlaXZlci5wdXNoLmNvbSMzNTVkNGMyNS0zNmU4LTQyOTYtODEzOC04ODI4YmJmNjhhZmEifSwiZmNtIjp7InRva2VuIjoiZGcyWjZvM0NQaVdNakVxOE5fSlBGXzpBUEE5MWJFLUljTW1xYmhjZVM1dG4zdk9SMjN3SkNqV213ZERaVlExRzJlMnZTMDZNV2hLLUtJUWUxOXUxc1VhTzM0dU9rMm81YlJBNzhiNy13LXpqUllFY3VnRmtkSFNNZHBTS0VDazVzaEdkc09LS19aaDVVRSIsImluc3RhbGxhdGlvbiI6eyJ0b2tlbiI6ImV5SmhiR2NpT2lKRlV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoY0hCSlpDSTZJakU2T0RjMk16RXpPRFU1TXpJM09tRnVaSEp2YVdRNlpURXdaV00yWkdSaU0yTTRNV1l6T1NJc0ltVjRjQ0k2TVRjM01USTBOalUwTVN3aVptbGtJam9pWkdjeVdqWnZNME5RYVZkTmFrVnhPRTVmU2xCR1h5SXNJbkJ5YjJwbFkzUk9kVzFpWlhJaU9qZzNOak14TXpnMU9UTXlOMzAuQUIyTFBWOHdSUUlnWHIybmF5bU9hdjNJVThYTXprQkVLMFdCS0ZlNVNHalhWWGt6REtGUXhJZ0NJUUNWVVBGVzJLYWp0MzctNXE1SmU2OVZFQlFPTDV3NnZVcGduUm81WTd1OWN3IiwiY3JlYXRlZEF0IjoxNzcwNjQxNzQxNDA3LCJleHBpcmVzSW4iOjYwNDgwMDAwMCwicmVmcmVzaFRva2VuIjoiM19BUzNxZndMWHNUUHVzcm0xeXlueEZkNkk0cE0yZzNZNG4xaGREWjFFN0JoRHNqX05wTExBSS1oeDlGSE5ucWttcW1pci1uU1VqRzFFZER1NHZBMkhYUlF6RVMyZW1iV1VlZVFvMDNvYmdGX3A4MG8iLCJmaWQiOiJkZzJaNm8zQ1BpV01qRXE4Tl9KUEZfIn19LCJjb25maWciOnsiYnVuZGxlSWQiOiJyZWNlaXZlci5wdXNoLmNvbSIsInByb2plY3RJZCI6InJpbmctMTc3NzAiLCJ2YXBpZEtleSI6IiJ9fX0=",
+            "_bridge": {
+                "username": "0E:98:C8:CF:BE:1F",
+                "port": 58615
+            },
+            "platform": "Ring"
+        }
+    ]
+}

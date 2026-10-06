@@ -3,6 +3,7 @@ volumes:
     config:
     mosquitto:
     zigbee2mqtt:
+    homebridge:
 services:
   homeassistant:
     image: homeassistant/home-assistant:latest
@@ -89,3 +90,16 @@ services:
   #     - 'config:/hass-config'
   #   environment:
   #     - HC_BASEPATH=/hass-config
+  homebridge:
+    image: homebridge/homebridge:latest
+    ports:
+      - 8581:8581
+    restart: always
+    network_mode: host
+    volumes:
+      - ./Homebridge/volumes/homebridge:/homebridge
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"

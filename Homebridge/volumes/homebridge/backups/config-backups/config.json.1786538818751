@@ -1,0 +1,159 @@
+{
+    "bridge": {
+        "name": "Homebridge BA2C",
+        "username": "0E:CE:41:61:A6:65",
+        "port": 51833,
+        "pin": "594-16-893",
+        "advertiser": "ciao",
+        "bind": [
+            "enp2s0f0",
+            "wlp3s0b1"
+        ]
+    },
+    "accessories": [],
+    "platforms": [
+        {
+            "name": "Config",
+            "port": 8581,
+            "platform": "config"
+        },
+        {
+            "mqtt": {
+                "base_topic": "zigbee2mqtt",
+                "server": "mqtt://192.168.0.254:1883",
+                "reject_unauthorized": false,
+                "keepalive": 60,
+                "version": 4,
+                "disable_qos": false
+            },
+            "defaults": {
+                "exclude": false
+            },
+            "exclude_grouped_devices": false,
+            "platform": "zigbee2mqtt",
+            "_bridge": {
+                "username": "0E:85:25:C6:58:78",
+                "port": 55785
+            }
+        },
+        {
+            "refreshToken": "eyJydCI6ImV5SmhiR2NpT2lKU1V6STFOaUlzSW1wcmRTSTZJaTl2WVhWMGFDOXBiblJsY201aGJDOXFkMnR6SWl3aWEybGtJam9pWkRjMFlqTmhNV1VpTENKMGVYQWlPaUpLVjFRaWZRLmV5SmxlSEFpT2pFM09Ea3hNVGt6Tmprc0ltbGhkQ0k2TVRjNE5qVXlOek0yT1N3aWFYTnpJam9pVW1sdVowOWhkWFJvVTJWeWRtbGpaUzF3Y205a09uVnpMV1ZoYzNRdE1Ub3hMakF1TXpNeU9DNHdJaXdpYjJsaGRDSTZNVGMzTURZME1UY3hOQ3dpY21WbWNtVnphRjlqYVdRaU9pSnlhVzVuWDI5bVptbGphV0ZzWDJGdVpISnZhV1FpTENKeVpXWnlaWE5vWDNOamIzQmxjeUk2V3lKamJHbGxiblFpWFN3aWNtVm1jbVZ6YUY5MWMyVnlYMmxrSWpveE1UQTRPRFExTlRnc0luSnVaQ0k2SW1oNVMxSkNhVjlOTlVNaUxDSnpaWE56YVc5dVgybGtJam9pY21sdVp5MXpaWE56YVc5dUxUSmpPR1F3TUdKakxUWmlOVEV0TkdZNE9TMWhOelk0TFdOaE5XSXdaVGM1T1dReE1TSXNJblI1Y0dVaU9pSnlaV1p5WlhOb0xYUnZhMlZ1SW4wLkt3aWJfY0ZQUW4xWV9SOWpReUpXYjhrNE9Sam1Nd2VORTB3Z0xFb3ZnYTIwWGpmMS1TNnlwUV80M0Nza3B4aUVsbEpTUmZiOERpa2xoek5iZ1Y1S1U2bkV6QzNtUzlxamZfYndzZkdkMjBtcHlLU01nalhYazZxdno3NkpFVzlSXzZwTlhvWHVVT2RLa2Eyc0F2ZmthRXVPNDRoTm00NEhrdV9DMjJjNlJPaUEwSHFTTGhKTkJjcFpkREtNQ2E2QXpHRm1QOFc1emlnLUkwWFB1U3Rjd2Z1NWdzOFNXRU5zb19kQnJvTERhYXRXQkRuUFlVQVA0ZWhFOFFDYm5wUFNkUnpWWm9kMi1WRko3YXdiaTlTYnJLc0phRmEyRG8tbDJtSGxnRFRfRWFXdlNXN0NFazF6amMzdEFFUEFUbXljZlFab01rQUVNX1pYS1JxRElXNlc4QSIsImhpZCI6IjU1MjY1ODA0LTI5YjQtNWYzMy1hNzEwLWViODRjYThjM2E4NiIsInBuYyI6eyJrZXlzIjp7InByaXZhdGVLZXkiOiJvXzFjX3dhUjNMb2c2bklUcUdMWUMxTFllWWlVS01xdHFsaDBieTRaRXVFIiwicHVibGljS2V5IjoiQkRhRG5UX3ZTWkhMMVlLUGFHRG9lM241RktKVXBTX29HX21UYXAxQVRmVFJ4WXc0bFhDR0IwMGNQbkRqM2FBcjFmd0o2dzkybk1xM1ZJYjVXVF9QVmVJIiwiYXV0aFNlY3JldCI6Im9Qb2NVdTBHajdSMVRPVzJuejJucWcifSwiZ2NtIjp7InRva2VuIjoiZHlnN3NJdllFUnM6QVBBOTFiSGExVkIya0c1ZzhzZV9BRVNrTzJ5dDFrZVhLRW1scU4wbEJXSmJ1aXNoSHh6bnplVVZLYlRJQ2RWdjI3WVNhUktPMTRWeFQ5dnBCcl9zdDJVUmNRZU50ekxpZDdwdE9DSzE3aGVFZnpIcFVvRUJSNnd0dlRyQkpZWll5V202M05KQ2dvQjAiLCJhbmRyb2lkSWQiOiI1NjE5NTEyMTMzMTI3MDYxODIzIiwic2VjdXJpdHlUb2tlbiI6Ijc1MDY5NzA4MjY5OTY0MDc0OCIsImFwcElkIjoid3A6cmVjZWl2ZXIucHVzaC5jb20jMzU1ZDRjMjUtMzZlOC00Mjk2LTgxMzgtODgyOGJiZjY4YWZhIn0sImZjbSI6eyJ0b2tlbiI6ImRnMlo2bzNDUGlXTWpFcThOX0pQRl86QVBBOTFiRS1JY01tcWJoY2VTNXRuM3ZPUjIzd0pDaldtd2REWlZRMUcyZTJ2UzA2TVdoSy1LSVFlMTl1MXNVYU8zNHVPazJvNWJSQTc4Yjctdy16alJZRWN1Z0ZrZEhTTWRwU0tFQ2s1c2hHZHNPS0tfWmg1VUUiLCJpbnN0YWxsYXRpb24iOnsidG9rZW4iOiJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKaGNIQkpaQ0k2SWpFNk9EYzJNekV6T0RVNU16STNPbUZ1WkhKdmFXUTZaVEV3WldNMlpHUmlNMk00TVdZek9TSXNJbVY0Y0NJNk1UYzNNVEkwTmpVME1Td2labWxrSWpvaVpHY3lXalp2TTBOUWFWZE5ha1Z4T0U1ZlNsQkdYeUlzSW5CeWIycGxZM1JPZFcxaVpYSWlPamczTmpNeE16ZzFPVE15TjMwLkFCMkxQVjh3UlFJZ1hyMm5heW1PYXYzSVU4WE16a0JFSzBXQktGZTVTR2pYVlhrekRLRlF4SWdDSVFDVlVQRlcyS2FqdDM3LTVxNUplNjlWRUJRT0w1dzZ2VXBnblJvNVk3dTljdyIsImNyZWF0ZWRBdCI6MTc3MDY0MTc0MTQwNywiZXhwaXJlc0luIjo2MDQ4MDAwMDAsInJlZnJlc2hUb2tlbiI6IjNfQVMzcWZ3TFhzVFB1c3JtMXl5bnhGZDZJNHBNMmczWTRuMWhkRFoxRTdCaERzal9OcExMQUktaHg5RkhObnFrbXFtaXItblNVakcxRWREdTR2QTJIWFJRekVTMmVtYldVZWVRbzAzb2JnRl9wODBvIiwiZmlkIjoiZGcyWjZvM0NQaVdNakVxOE5fSlBGXyJ9fSwiY29uZmlnIjp7ImJ1bmRsZUlkIjoicmVjZWl2ZXIucHVzaC5jb20iLCJwcm9qZWN0SWQiOiJyaW5nLTE3NzcwIiwidmFwaWRLZXkiOiIifX19",
+            "_bridge": {
+                "username": "0E:98:C8:CF:BE:1F",
+                "port": 58615
+            },
+            "platform": "Ring"
+        },
+        {
+            "devices": [
+                {
+                    "host": "192.168.68.84",
+                    "port": 6053,
+                    "password": "4c07a2f6f9bc6f9999c7fef6df52fee4",
+                    "encryptionKey": "7m6wRZrX7zroE1EyFBnQb8rVdtXptdFNI+RHyJnejYM="
+                },
+                {
+                    "host": "192.168.68.87",
+                    "port": 6053,
+                    "password": "4877a0653c9695091ce98674b66d4c7d",
+                    "encryptionKey": "BurmjiVlL4AUmH+PKWZuBov9IbKN2sNo19fJK7uSaOA="
+                }
+            ],
+            "debug": true,
+            "discover": true,
+            "_bridge": {
+                "username": "0E:F0:BF:5E:78:83",
+                "port": 34699
+            },
+            "platform": "esphome"
+        },
+        {
+            "name": "Camera FFmpeg",
+            "cameras": [
+                {
+                    "name": "Kitchen",
+                    "serialNumber": "b0bf404e517edf5d",
+                    "motion": true,
+                    "unbridge": true,
+                    "videoConfig": {
+                        "source": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+                        "audio": true
+                    }
+                }
+            ],
+            "_bridge": {
+                "username": "0E:68:28:6C:7C:3C",
+                "port": 34759
+            },
+            "platform": "Camera-ffmpeg"
+        },
+        {
+            "name": "CameraUI",
+            "port": 8081,
+            "atHomeSwitch": false,
+            "logLevel": "info",
+            "mqtt": {
+                "active": false,
+                "tls": false,
+                "port": 1883
+            },
+            "http": {
+                "active": false,
+                "port": 7272,
+                "localhttp": false
+            },
+            "smtp": {
+                "active": false,
+                "port": 2727,
+                "space_replace": "+"
+            },
+            "ftp": {
+                "active": false,
+                "useFile": false,
+                "port": 5050
+            },
+            "ssl": {
+                "active": false
+            },
+            "options": {
+                "videoProcessor": "ffmpeg"
+            },
+            "cameras": [
+                {
+                    "name": "Kitchen Camera",
+                    "motion": true,
+                    "motionTimeout": 15,
+                    "unbridge": true,
+                    "hsv": false,
+                    "prebuffering": false,
+                    "forcePrebuffering": false,
+                    "prebufferLength": 4,
+                    "hksvConfig": {
+                        "source": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+                        "audio": true
+                    },
+                    "videoConfig": {
+                        "source": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+                        "subSource": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+                        "stillImageSource": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+                        "vcodec": "copy",
+                        "acodec": "libfdk_aac",
+                        "audio": true
+                    },
+                    "smtp": {
+                        "email": "Kitchen Camera"
+                    },
+                    "videoanalysis": {
+                        "active": true
+                    },
+                    "mqtt": {}
+                }
+            ],
+            "_bridge": {
+                "username": "0E:CC:B0:52:44:83",
+                "port": 57834
+            },
+            "platform": "CameraUI"
+        }
+    ]
+}

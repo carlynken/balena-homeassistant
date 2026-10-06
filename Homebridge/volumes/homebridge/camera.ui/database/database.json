@@ -1,0 +1,182 @@
+{
+  "version": "1.1.17",
+  "firstStart": false,
+  "cameras": [
+    {
+      "name": "Kitchen Camera",
+      "motion": true,
+      "unbridge": true,
+      "hsv": false,
+      "prebuffering": false,
+      "prebufferLength": 4,
+      "videoConfig": {
+        "source": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+        "subSource": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+        "stillImageSource": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+        "vcodec": "copy",
+        "acodec": "libfdk_aac",
+        "audio": true
+      },
+      "videoanalysis": {
+        "active": true
+      },
+      "motionTimeout": 15,
+      "smtp": {
+        "email": "Kitchen Camera"
+      },
+      "mqtt": {},
+      "recordOnMovement": true,
+      "forcePrebuffering": false,
+      "hksvConfig": {
+        "source": "-i rtsp://ISeeU:gebjovti01@192.168.68.81:554",
+        "audio": true
+      },
+      "disable": true
+    }
+  ],
+  "notifications": [],
+  "users": [
+    {
+      "id": 1,
+      "username": "ken",
+      "password": "P2iYBLiNfaA+LRpAKIa0CQ==$bmTOI7R/R6+2S3XmLn5LIweOX3jVQYpaZnAGeQacy1hywfURzOLU/fUL8ogCy14iBN7AUVKl3lhdBNx6Jj6I0g==",
+      "sessionTimer": 14400,
+      "photo": "no_img.png",
+      "permissionLevel": [
+        "admin"
+      ]
+    }
+  ],
+  "settings": {
+    "aws": {
+      "active": false,
+      "accessKeyId": "",
+      "secretAccessKey": "",
+      "region": "",
+      "contingent_total": 5000,
+      "contingent_left": 5000,
+      "last_rekognition": ""
+    },
+    "cameras": [
+      {
+        "name": "Kitchen Camera",
+        "room": "Standard",
+        "resolution": "1280x720",
+        "pingTimeout": 1,
+        "streamTimeout": 60,
+        "audio": false,
+        "telegramType": "Snapshot",
+        "alexa": false,
+        "webhookUrl": "",
+        "mqttTopic": "camera.ui/motion",
+        "privacyMode": false,
+        "camview": {
+          "favourite": true,
+          "live": true,
+          "snapshotTimer": 60
+        },
+        "dashboard": {
+          "live": true,
+          "snapshotTimer": 60
+        },
+        "rekognition": {
+          "active": false,
+          "confidence": 90,
+          "labels": []
+        },
+        "videoanalysis": {
+          "forceCloseTimer": 3,
+          "dwellTimer": 60,
+          "sensitivity": 75,
+          "difference": 5,
+          "regions": [
+            {
+              "finished": true,
+              "coords": [
+                [
+                  0,
+                  100
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  100,
+                  0
+                ],
+                [
+                  100,
+                  100
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "general": {
+      "atHome": false,
+      "exclude": [],
+      "rooms": [
+        "Standard"
+      ],
+      "automation": {
+        "active": false,
+        "atHome": false,
+        "exclude": [],
+        "startTime": "08:00",
+        "endTime": "17:00"
+      }
+    },
+    "notifications": {
+      "active": false,
+      "removeAfter": 3,
+      "alexa": {
+        "active": false,
+        "domain": "",
+        "serialNr": "",
+        "message": "",
+        "startTime": "00:00",
+        "endTime": "23:59",
+        "auth": {
+          "cookie": "",
+          "macDms": {
+            "device_private_key": "",
+            "adp_token": ""
+          }
+        },
+        "proxy": {
+          "port": 9494
+        }
+      },
+      "telegram": {
+        "active": false,
+        "token": "",
+        "chatID": "",
+        "message": ""
+      },
+      "webhook": {
+        "active": false
+      }
+    },
+    "recordings": {
+      "active": false,
+      "type": "Snapshot",
+      "timer": 10,
+      "path": "/var/lib/homebridge/camera.ui/recordings",
+      "removeAfter": 7
+    },
+    "webpush": {
+      "publicKey": "BCQdCjELQoauR5Vaam1RBzGeJRfr-PICNbU6tJmd4waWrTpLJD5WOSc8AQ6dRJWcIWCL6Hg_8uPBbK5VuXr4OY4",
+      "privateKey": "9Mg4npE1-hUGDcWZvq8UcCBWRI7oSutpXFnp0-Ide-Y",
+      "subscription": false
+    },
+    "widgets": {
+      "options": {
+        "locked": false
+      },
+      "items": []
+    }
+  }
+}
